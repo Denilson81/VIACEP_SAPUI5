@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="pina.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	displayBlock="true"
+    xmlns="sap.m">
+
+
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+				   <VBox  class="sapUiSmallMargin" >
+					 <form:SimpleForm layout="ResponsiveLayout"	 >
+					  <form:content >						  
+					 
+					      <Label text="CEP" labelFor="cep"/>
+                          <Input id="cep" placeholder="Entrar com CEP" type="Number" liveChange="onChange"/>	                          
+					   
+					   
+					      <Label text="CEP Encontrado" labelFor="displayCep"/>
+                          <Input id="displayCep" editable="false" value="{/cep}"/>	
+					   
+					   	  <Label text="Rua/Av." labelFor="logradouro"/>
+                          <Input id="logradouro" editable="false" value="{/logradouro}"/>	
+					   
+					   	  <Label text="Bairro" labelFor="bairro"/>
+                          <Input id="bairro" editable="false" value="{/bairro}"/>	
+					   
+					      <Label text="Localidade" labelFor="localidade"/>
+                          <Input id="localidade" editable="false" value="{/localidade} - {/uf}"/>	
+
+					    </form:content>
+					 </form:SimpleForm>
+					 </VBox>					                     
+ 
+					<HBox  justifyContent="Center"  >
+
+						<Button id="btBuscar" press="onGetCep" icon="sap-icon://addresses" text="Busca CEP" width="150px" enabled="false"/>	
+						<Button press="onClear" icon="sap-icon://clear-filter" text="Limpa Campos" width="150px"/>	
+					
+				    </HBox>
+                        
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
